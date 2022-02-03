@@ -1,21 +1,21 @@
-## Javalin Forms
+## Javalin Forms Methods
 ---
 ### Description
 
-In this lab you will add more parameters to a pre-existing form and modify the resulting print out.
+In this lab, we will cover the method attribute in forms.
 
 ---
 ### Steps
 
- 
-1. In src -> main -> jte -> form.jte modify the file to add a favorite color segment. 
-2. In src -> main -> java -> Main.java in the handler create a new string to hold the form parameter value for the favorite color.
-3. Main.java modify the ctx result to include a part for the new color segment.
-
+1. In src -> main -> java -> Main.java, change one of the get routes to the correct method that matches the form.
 
 ---
 ### Sample Output
-```Java
-"Hello your name is Andy and your favorite color is pink!"
-```
+
+You are sending johnd@email.com an email from janed@email.com
+
+Subject: Welcome 
+
+Contents: Hi Jane! Welcome to the company!
+
 ---

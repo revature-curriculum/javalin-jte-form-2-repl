@@ -30,8 +30,8 @@ public class Main {
         String subject = ctx.formParam("subject");
         String contents = ctx.formParam("contents");
 
-        ctx.result("You are sending " + receiver + " an email from " + sender + " \nwith the subject: " 
-                    + subject + " \nand the contents: " + contents);
+        ctx.result("You are sending " + receiver + " an email from " + sender + " \nSubject: " 
+                    + subject + " \nContents: " + contents);
 
     };
 
