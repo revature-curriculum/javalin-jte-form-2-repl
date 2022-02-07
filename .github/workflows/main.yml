@@ -1,0 +1,55 @@
+name: Copy README.md to Instructions.md
+
+# Controls when the workflow will run
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  update-instructions:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        if: always()
+        uses: actions/checkout@v2
+
+      - name: remove instructions md
+        if: always()
+        run: |
+          rm .lesson/instructions.md
+          
+      - name: remove .lesson
+        if: always()
+        run: |
+          rm -rf .lesson
+          
+      - name: create .lesson
+        if: always()
+        run: |
+          mkdir .lesson
+          
+      - name: copy readme to instructions
+        if: always()
+        run: |
+          cp README.md .lesson/instructions.md
+      
+      - name: Commit files
+        if: always()
+        run: |
+          git add .
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Add changes" -a
+      
+      - name: Push changes
+        if: always()
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          branch: ${{ github.ref }}
