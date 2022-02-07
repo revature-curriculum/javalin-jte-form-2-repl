@@ -1,4 +1,4 @@
-## Javalin Forms Methods
+## JTE Forms 3: Methods
 ---
 ### Description
 
