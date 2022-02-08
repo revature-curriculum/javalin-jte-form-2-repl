@@ -13,7 +13,7 @@ public class Main {
 
         app.get("/getEmail", getFormHandler);
 
-        app.get("/postEmail", postFormHandler);
+        app.post("/postEmail", postFormHandler);
 
     }
 
